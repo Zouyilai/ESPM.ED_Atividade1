@@ -35,12 +35,12 @@ public class Util {
 			double valor;
 			valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor de saque (R$) : "));
 			
-			if (x.verificarSaldo(valor)) {
+			if (x.verificarSaldo(valor) && !x.verificarValor(valor)) {
 				x.sacar(valor);
 				
 				JOptionPane.showMessageDialog(null, "R$ " + valor + "\nSaque realizdo com sucesso!");
 			} else {
-				JOptionPane.showMessageDialog(null, "Erro! Saldo insuficiente :(");
+				JOptionPane.showMessageDialog(null, "Erro! ");
 			}
 			
 		} else {
@@ -61,9 +61,14 @@ public class Util {
 			double valor;
 			valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor de depósito (R$) : "));
 		
-			x.depositar(valor);
-			
-			JOptionPane.showMessageDialog(null, "R$ " + valor + "\nDepósito realizdo com sucesso!");
+			if(x.verificarValor(valor)) {
+				JOptionPane.showMessageDialog(null, "Erro! ");
+			} else {
+				
+				x.depositar(valor);
+				
+				JOptionPane.showMessageDialog(null, "R$ " + valor + "\nDepósito realizdo com sucesso!");
+			}
 			
 			
 		} else {

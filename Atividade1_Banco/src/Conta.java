@@ -43,6 +43,15 @@ public class Conta {
 		return menor;
 	}
 	
+	public boolean verificarValor(double valor) {
+		boolean negativo = true;
+		
+		if (valor > 0) {
+			negativo = false;
+		}
+		return negativo;
+	}
+	
 	public void sacar (double valor) {
 		saldo = saldo - valor;
 	}
