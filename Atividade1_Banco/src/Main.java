@@ -6,8 +6,6 @@ public class Main {
 
 		int opcao;
 		
-		Lista<Conta> lista = new Lista<Conta>();
-		
 		do {
 			opcao = Integer.parseInt(JOptionPane.showInputDialog(menu()));
 			if( opcao < 1 || opcao > 6) {
